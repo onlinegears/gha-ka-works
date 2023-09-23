@@ -1,0 +1,21 @@
+name: works
+
+on:
+  schedule:
+    # every 21:51 UTC
+    - cron: "51 21 * * *"
+
+jobs:
+  tasks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Checkout tools
+        uses: actions/checkout@v3
+        with:
+          repository: onlinegears/private-ka-tools
+          path: ./private-ka-tools
+          ssh-key: ${{ secrets.KEY_FOR_TOOLS }}
+      - name: Check
+        run: ls ./private-ka-tools
