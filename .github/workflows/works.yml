@@ -18,5 +18,11 @@ jobs:
           repository: onlinegears/private-ka-tools
           path: ./private-ka-tools
           ssh-key: ${{ secrets.KEY_FOR_TOOLS }}
-      - name: Check
-        run: ls ./private-ka-tools
+      - name: Exec
+        run: |
+          ls ./private-ka-tools
+          cd ./private-ka-tools
+          ls
+          ls ./tools
+          cd ./tools
+          ./ka000
