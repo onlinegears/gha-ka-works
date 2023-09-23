@@ -20,9 +20,6 @@ jobs:
           ssh-key: ${{ secrets.KEY_FOR_TOOLS }}
       - name: Exec
         run: |
-          ls ./private-ka-tools
-          cd ./private-ka-tools
-          ls
-          ls ./tools
-          cd ./tools
+          cd ./private-ka-tools/tools
           ./ka000
+          ./ka001
