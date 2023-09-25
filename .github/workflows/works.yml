@@ -23,3 +23,4 @@ jobs:
           cd ./private-ka-tools/tools
           ./ka000
           ./ka001
+          ./ka002
