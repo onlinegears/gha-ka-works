@@ -34,4 +34,4 @@ jobs:
           git add ka001.log
           git add ka002.log
           git commit -m 'auto commit'
-          git push
+          git push --set-upstream origin logs
