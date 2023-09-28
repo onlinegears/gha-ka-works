@@ -21,9 +21,9 @@ jobs:
       - name: Exec
         run: |
           cd ./private-ka-tools/tools
-          ./e run ka000 > ../ka000.log
-          ./e run ka001 > ../ka001.log
-          ./e run ka002 > ../ka002.log
+          ./e run ka000 > ../../ka000.log
+          ./e run ka001 > ../../ka001.log
+          ./e run ka002 > ../../ka002.log
       - name: Log
         run: |
           git config user.name "gha"
