@@ -29,6 +29,7 @@ jobs:
           git config user.name "gha"
           git config user.email "action@github.com"
           git checkout -b logs
+          ls -a
           git add ka000.log
           git add ka001.log
           git add ka002.log
