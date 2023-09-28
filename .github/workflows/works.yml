@@ -21,6 +21,10 @@ jobs:
       - name: Exec
         run: |
           cd ./private-ka-tools/tools
-          ./ka000
-          ./ka001
-          ./ka002
+          ./e run ka000 > ka000.log
+          ./e run ka001 > ka001.log
+          ./e run ka002 > ka002.log
+      - name: Log
+        run: |
+          ls -a
+          ls -a ./private-ka-tools/tools
