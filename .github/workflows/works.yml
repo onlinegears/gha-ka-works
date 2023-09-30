@@ -27,6 +27,7 @@ jobs:
           ./e run ./ka001 > ../../ka001.log
           ./e run ./ka002 > ../../ka002.log
           ./e run ./ka003 > ../../ka003.log
+          ./e run ./ka004 > ../../ka004.log
       - name: Log
         run: |
           d=`date -u "+%Y%m%d%H%M%S"`
@@ -37,5 +38,6 @@ jobs:
           git add ka001.log
           git add ka002.log
           git add ka003.log
+          git add ka004.log
           git commit -m 'auto commit'
           git push --set-upstream origin logs/$d
