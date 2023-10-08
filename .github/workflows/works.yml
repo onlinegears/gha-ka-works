@@ -24,11 +24,6 @@ jobs:
         run: |
           cd ./private-ka-tools/tools
           ./e run ./ka000 > ../../ka000.log
-          ./e run ./ka001 > ../../ka001.log
-          ./e run ./ka002 > ../../ka002.log
-          ./e run ./ka003 > ../../ka003.log
-          ./e run ./ka004 > ../../ka004.log
-          ./e run ./ka005 > ../../ka005.log
       - name: Log
         run: |
           d=`date -u "+%Y%m%d%H%M%S"`
@@ -36,10 +31,5 @@ jobs:
           git config user.email "action@github.com"
           git checkout -b logs/$d
           git add ka000.log
-          git add ka001.log
-          git add ka002.log
-          git add ka003.log
-          git add ka004.log
-          git add ka005.log
           git commit -m 'auto commit'
           git push --set-upstream origin logs/$d
