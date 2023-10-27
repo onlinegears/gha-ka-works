@@ -1,0 +1,31 @@
+name: daily-docker
+
+on:
+  schedule:
+    # every 08:21 UTC
+    - cron: "21 08 * * *"
+    # every 20:21 UTC
+    - cron: "21 20 * * *"
+  workflow_dispatch:
+
+jobs:
+  daily-work:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.actor }}/gha-ka-works/auto:latest
+      options: --ipc=host
+    steps:
+      - name: Prepare git
+        run: |
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install -y git
+      - name: Checkout tools
+        uses: actions/checkout@v3
+        with:
+          repository: onlinegears/private-ka-tools
+          path: ./private-ka-tools
+          ssh-key: ${{ secrets.KEY_FOR_TOOLS }}
+      - name: Touch and run
+        run: |
+          touch RUN
+          ./private-ka-tools/scripts/daily-docker.sh
