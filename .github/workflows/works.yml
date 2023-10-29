@@ -2,6 +2,12 @@ name: works
 
 on:
   schedule:
+    # every 03:51 UTC
+    - cron: "51 03 * * *"
+    # every 09:51 UTC
+    - cron: "51 09 * * *"
+    # every 15:51 UTC
+    - cron: "51 15 * * *"
     # every 21:51 UTC
     - cron: "51 21 * * *"
   workflow_dispatch:
