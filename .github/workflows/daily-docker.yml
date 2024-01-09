@@ -11,6 +11,7 @@ on:
 jobs:
   daily-work:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     container:
       image: ghcr.io/${{ github.actor }}/gha-ka-works/auto:latest
       options: --ipc=host
